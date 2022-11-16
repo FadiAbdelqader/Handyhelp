@@ -20,4 +20,4 @@ Handyhelp vise à venir en aide aux personnes à mobilité réduite, non pas en 
 Features (à completer)
   - Reserver un taxi (pour PMR: réserver / pour Taxi : s'inscrire en tant que taxi)
   - Donner un lieu général (cinéma, musée,...) et retourner une liste des lieux proches adaptés
-  - GPS adapté (transports, piéton,...)
+  - GPS adapté (transports, piéton,...).
