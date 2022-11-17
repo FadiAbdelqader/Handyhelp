@@ -5,7 +5,7 @@
 ![GitHub](https://img.shields.io/github/license/FadiAbdelqader/Handyhelp?style=flat) [![Codacy Badge](https://app.codacy.com/project/badge/Grade/2725e46651c245e3981ff73fd3c82770)](https://www.codacy.com/gh/FadiAbdelqader/Handyhelp/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=FadiAbdelqader/Handyhelp&amp;utm_campaign=Badge_Grade)
 #
 
-On ne s’en rends pas forcément compte, mais le monde tel qu’il est aujourd’hui n’est pas facilement accessible à tout le monde, et particulièrement pour les personnes en situation de handicap. 
+On ne s’en rend pas forcément compte, mais le monde tel qu’il est aujourd’hui n’est pas facilement accessible à tout le monde, et particulièrement pour les personnes en situation de handicap. 
 
 Handyhelp vise à venir en aide aux personnes à mobilité réduite, non pas en modifiant les infrastructures et les routes mais en les aidant à prévoir leurs trajets, en leur indiquant si tel ou tel endroit est accessible, et en leur fournissant les endroits facilement accessibles pour eux en fonction de ce qu'ils souhaitent faire. 
 
