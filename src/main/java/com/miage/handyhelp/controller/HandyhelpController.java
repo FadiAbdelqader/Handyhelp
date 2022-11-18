@@ -11,17 +11,9 @@ import java.sql.SQLException;
 @Controller
 public class HandyhelpController {
 
-    @GetMapping(value = "/OrderG7")
-    public String G7Form () {
-        return "pages/taxi2";
+    @GetMapping(value = "/getItineraire")
+    public String intineraire () {
+        return "pages/itineraire";
     }
 
-    @GetMapping(value = "/")
-    @ResponseBody
-    public String testbd() throws SQLException {
-      String test="";
-      DBConnection bd = new DBConnection();
-      bd.executeStatement("INSERT INTO test(msg) VALUES ('hello')");
-      return test;
-    }
 }
