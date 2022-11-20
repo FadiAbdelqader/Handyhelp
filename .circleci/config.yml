@@ -7,7 +7,7 @@ jobs:
   check:
     docker:
       - image: amazoncorretto:11
-    steps:
+    test:
       - run: ./gradlew test jacocoTestReport coverallsJacoco
 
     working_directory: ~/repo
