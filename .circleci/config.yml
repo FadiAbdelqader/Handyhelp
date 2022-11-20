@@ -3,9 +3,9 @@ version: 2
 jobs:
   build:
    
-     docker:
+    docker:
       - image: circleci/openjdk:8-jdk
-     steps:
+    steps:
       - run: ./gradlew test jacocoTestReport coverallsJacoco
 
 
