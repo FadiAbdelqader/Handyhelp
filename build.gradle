@@ -3,6 +3,7 @@ plugins {
 	id 'org.springframework.boot' version '2.7.5'
 	id 'io.spring.dependency-management' version '1.0.15.RELEASE'
 	id 'jacoco'
+	id 'com.github.nbaztec.coveralls-jacoco" version "1.2.15'
 }
 
 group = 'com.miage'
@@ -11,6 +12,7 @@ sourceCompatibility = '17'
 
 repositories {
 	mavenCentral()
+	jcenter()
 }
 
 dependencies {
