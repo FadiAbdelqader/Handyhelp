@@ -12,8 +12,7 @@ Handyhelp vise à venir en aide aux personnes à mobilité réduite, non pas en 
 
 À venir :
   - Vous êtes PMR ? Reservez un taxi adapté directement depuis Handyhelp !
-  - Vous êtes taxi, spécialisé dans le transport de personnes à mobilité réduite, ou vous avez tout simplement la possibilité de conduire une personne à
-    mobilité réduite ? Inscrivez-vous sur Handyhelp et attendez que quelqu'un vous contacte !
+  - Besoin d'un itineraire de transport adapté ? Trouvez-le sur Handyhelp !
   - Vous souhaitez aller au musée, au cinéma... mais vous ne savez pas s'il est adapté à votre situation ? Vous aurez votre réponse sur Handyhelp !
     Suite à votre visite, rendez-nous service ainsi qu'aux utilisateurs et attribuez une AccesNote au lieu visité.
 
