@@ -4,8 +4,6 @@ jobs:
   build: 
     docker:
       - image: circleci/openjdk:8-jdk
-    
-jobs:
   check:
     docker:
       - image: amazoncorretto:11
