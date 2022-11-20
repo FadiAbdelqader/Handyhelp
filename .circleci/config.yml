@@ -1,10 +1,11 @@
 version: 2
 
 jobs:
-  build:
-   
+  build: 
     docker:
       - image: circleci/openjdk:8-jdk
+     steps:
+      - run: ./gradlew test jacocoTestReport coverallsJacoco
 
 
     working_directory: ~/repo
