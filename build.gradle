@@ -15,11 +15,23 @@ repositories {
 	jcenter()
 }
 
+
+
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+coverallsJacoco {
+    reportPath = "build/reports/jacoco/test/jacocoTestReport.xml" // default: "build/reports/jacoco/test/jacocoTestReport.xml"
+
+    reportSourceSets += sourceSets.foo.allJava.srcDirs + sourceSets.bar.allJava.srcDirs // default: main
+    apiEndpoint = "https://coveralls.io/api/v1/jobs" // default: https://coveralls.io/api/v1/jobs 
+    
+    dryRun = false // default: false
+    coverallsRequest = File("build/req.json") // default: null
 }
 
 tasks.named('test') {
