@@ -2,14 +2,16 @@ package com.miage.handyhelp.controller;
 
 import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.miage.handyhelp.model.Greeting;
+import com.miage.handyhelp.model.ItineraryModel;
 import com.miage.handyhelp.repository.DBConnection;
 import com.miage.handyhelp.service.ItineraryService;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
 import java.math.BigDecimal;
@@ -18,11 +20,6 @@ import java.util.Map;
 
 @Controller
 public class HandyhelpController {
-
-    @GetMapping(value = "/itineraire")
-    public String intineraire () {
-        return "pages/itineraire";
-    }
 
     @GetMapping(value = "/testapi")
     @ResponseBody
@@ -33,7 +30,26 @@ public class HandyhelpController {
         JSONArray j = i.curlItinerary(longitudeLatitude,longitudeLatitude2);
         JSONArray arr = i.parseSections(j);
         return i.printDirectives(arr);
-        //return arr.toString();
+    }
+
+
+    @GetMapping("/itinerary")
+    public String greetingForm(Model model) {
+        model.addAttribute("initeraryModel", new ItineraryModel());
+        return "pages/itinerary";
+    }
+
+    @PostMapping("/itinerary")
+    public String greetingSubmit(@ModelAttribute ItineraryModel ItineraryModel, Model model) throws IOException, InterruptedException {
+
+        ItineraryService itineraryService = new ItineraryService();
+        Map<Double, Double> longitudeLatitude = itineraryService.getLongLat(ItineraryModel.getDeparture());
+        Map<Double, Double> longitudeLatitude2 = itineraryService.getLongLat(ItineraryModel.getArrival());
+        JSONArray j = itineraryService.curlItinerary(longitudeLatitude,longitudeLatitude2);
+        JSONArray arr = itineraryService.parseSections(j);
+        ItineraryModel.setRoute(itineraryService.printDirectives(arr));
+        model.addAttribute("initeraryModel", ItineraryModel);
+        return "pages/itineraryResult";
     }
 
 }
