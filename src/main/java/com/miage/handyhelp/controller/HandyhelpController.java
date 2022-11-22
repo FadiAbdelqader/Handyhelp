@@ -1,21 +1,13 @@
 package com.miage.handyhelp.controller;
 
-import com.fasterxml.jackson.core.JsonParser;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.miage.handyhelp.model.Greeting;
 import com.miage.handyhelp.model.ItineraryModel;
-import com.miage.handyhelp.repository.DBConnection;
 import com.miage.handyhelp.service.ItineraryService;
 import org.json.JSONArray;
-import org.json.JSONObject;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
-import java.math.BigDecimal;
-import java.sql.SQLException;
 import java.util.Map;
 
 @Controller

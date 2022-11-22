@@ -94,7 +94,13 @@ public class ItineraryService {
     }
 
     public String transportToString(JSONObject transportRoute){
-        String rtr = transportRoute.get("network") + " " + transportRoute.get("code")
+        String network = "";
+        if (((String )transportRoute.get("network")).compareTo("RATP") == 0 ){
+            network = "Metro";
+        } else {
+            network =(String) transportRoute.get("network");
+        }
+        String rtr = network + " " + transportRoute.get("code")
                 + " direction " + transportRoute.get("direction")
                 + " de " + transportRoute.get("from") + " à " + transportRoute.get("to");
         return rtr;
@@ -102,14 +108,15 @@ public class ItineraryService {
 
     public String printDirectives (JSONArray directives){
         int i=0;
+        String rtr = "";
         while (i<directives.length()){
             JSONObject directive = directives.getJSONObject(i);
             if(directive.has("type") && ((String) directive.get("type")).compareTo("public_transport") == 0){
-                return transportToString(directive);
+                rtr+=" " + transportToString(directive);
             }
             i++;
         }
-        return "";
+        return rtr;
     }
 
     public JSONArray parseSections(JSONArray sections){
