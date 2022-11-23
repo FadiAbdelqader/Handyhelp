@@ -21,7 +21,7 @@ public class HandyhelpController {
         Map<Double, Double> longitudeLatitude2 = i.getLongLat("69 quai branly paris");
         JSONArray j = i.curlItinerary(longitudeLatitude,longitudeLatitude2);
         JSONArray arr = i.parseSections(j);
-        return i.printDirectives(arr);
+        return j.toString();
     }
 
 
@@ -32,14 +32,14 @@ public class HandyhelpController {
     }
 
     @PostMapping("/itinerary")
-    public String greetingSubmit(@ModelAttribute ItineraryModel ItineraryModel, Model model) throws IOException, InterruptedException {
+    public String getItinerary(@ModelAttribute ItineraryModel ItineraryModel, Model model) throws IOException, InterruptedException {
 
         ItineraryService itineraryService = new ItineraryService();
         Map<Double, Double> longitudeLatitude = itineraryService.getLongLat(ItineraryModel.getDeparture());
         Map<Double, Double> longitudeLatitude2 = itineraryService.getLongLat(ItineraryModel.getArrival());
-        JSONArray j = itineraryService.curlItinerary(longitudeLatitude,longitudeLatitude2);
-        JSONArray arr = itineraryService.parseSections(j);
-        ItineraryModel.setRoute(itineraryService.printDirectives(arr));
+        JSONArray sections = itineraryService.curlItinerary(longitudeLatitude,longitudeLatitude2);
+        JSONArray directives = itineraryService.parseSections(sections);
+        ItineraryModel.setRoute(itineraryService.directivesToString(directives));
         model.addAttribute("initeraryModel", ItineraryModel);
         return "pages/itineraryResult";
     }
