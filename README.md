@@ -9,6 +9,20 @@
 ![GitHub tag (latest by date)](https://img.shields.io/github/v/tag/FadiAbdelqader/Handyhelp)
 #
 
+# Requirements
+```Java 16```
+
+# Lancer l'application
+
+```git clone https://github.com/FadiAbdelqader/Handyhelp.git```
+
+Dans le repertoire ```Handyhelp\src\main\java\com\miage\handyhelp``` lancer la classe ```HandyhelpApplication```
+
+Dans la barre d'URL de votre navigateur, copier coller : ```localhost:8080/```
+
+
+#
+
 On ne s’en rends pas forcément compte, mais le monde tel qu’il est aujourd’hui n’est pas facilement accessible à tout le monde, et particulièrement pour les personnes en situation de handicap. 
 
 Handyhelp vise à venir en aide aux personnes à mobilité réduite, non pas en modifiant les infrastructures et les routes mais en les aidant à prévoir leurs trajets, en leur indiquant si tel ou tel endroit est accessible, et en leur fournissant les endroits facilement accessibles pour eux en fonction de ce qu'ils souhaitent faire. 
