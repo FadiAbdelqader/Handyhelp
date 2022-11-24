@@ -13,11 +13,11 @@
 
 # Launch the app
 
-First, make sure you have Java 16 of above. (You can check running this commande ```java -v``` in your terminal (for Linux/MacOS) or ```java --version``` for Windows.
+First, make sure you have Java 16 of above. (You can check running this commande ```java -v``` in your terminal (for Linux/MacOS) or ```java --version``` for Windows.)
 
 ```git clone https://github.com/FadiAbdelqader/Handyhelp.git```
 
-In ```Handyhelp\src\main\java\com\miage\handyhelp``` lancer la classe ```HandyhelpApplication```
+In ```Handyhelp\src\main\java\com\miage\handyhelp``` launch ```HandyhelpApplication```
 
 Copy-Paste this in you browser : ```localhost:8080/```
 
