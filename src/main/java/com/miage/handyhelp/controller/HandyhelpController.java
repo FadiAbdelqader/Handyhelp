@@ -8,22 +8,23 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
+import java.util.List;
 import java.util.Map;
 
 @Controller
 public class HandyhelpController {
-
+/*
     @GetMapping(value = "/testapi")
     @ResponseBody
     public String testapi() throws IOException, InterruptedException {
         ItineraryService i = new ItineraryService();
         Map<Double, Double> longitudeLatitude = i.getLongLat("9 rue abel paris");
         Map<Double, Double> longitudeLatitude2 = i.getLongLat("69 quai branly paris");
-        JSONArray j = i.curlItinerary(longitudeLatitude,longitudeLatitude2);
+        List<JSONArray j = i.curlItinerary(longitudeLatitude,longitudeLatitude2);
         JSONArray arr = i.parseSections(j);
         return j.toString();
     }
-
+*/
 
     @GetMapping("/itinerary")
     public String greetingForm(Model model) {
@@ -37,9 +38,19 @@ public class HandyhelpController {
         ItineraryService itineraryService = new ItineraryService();
         Map<Double, Double> longitudeLatitude = itineraryService.getLongLat(ItineraryModel.getDeparture());
         Map<Double, Double> longitudeLatitude2 = itineraryService.getLongLat(ItineraryModel.getArrival());
-        JSONArray sections = itineraryService.curlItinerary(longitudeLatitude,longitudeLatitude2);
-        JSONArray directives = itineraryService.parseSections(sections);
-        ItineraryModel.setRoute(itineraryService.directivesToString(directives));
+
+        JSONArray sections_1 = itineraryService.curlItinerary(longitudeLatitude,longitudeLatitude2,0);
+        JSONArray directives_1 = itineraryService.parseSections(sections_1);
+        ItineraryModel.setRoute_1(itineraryService.directivesToString(directives_1));
+/*
+        JSONArray sections_2 = itineraryService.curlItinerary(longitudeLatitude,longitudeLatitude2,1);
+        JSONArray directives_2 = itineraryService.parseSections(sections_2);
+        ItineraryModel.setRoute_2(itineraryService.directivesToString(directives_2));
+
+        JSONArray sections_3 = itineraryService.curlItinerary(longitudeLatitude,longitudeLatitude2,2);
+        JSONArray directives_3 = itineraryService.parseSections(sections_3);
+        ItineraryModel.setRoute_3(itineraryService.directivesToString(directives_3));
+*/
         model.addAttribute("initeraryModel", ItineraryModel);
         return "pages/itineraryResult";
     }

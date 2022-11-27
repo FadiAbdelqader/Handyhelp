@@ -4,14 +4,32 @@ public class ItineraryModel {
     private String departure;
     private String arrival;
 
-    private String route;
+    private String route_1="";
+    private String route_2="";
+    private String route_3="";
 
-    public String getRoute() {
-        return route;
+    public String getRoute_2() {
+        return route_2;
     }
 
-    public void setRoute(String route) {
-        this.route = route;
+    public void setRoute_2(String route_2) {
+        this.route_2 = route_2;
+    }
+
+    public String getRoute_3() {
+        return route_3;
+    }
+
+    public void setRoute_3(String route_3) {
+        this.route_3 = route_3;
+    }
+
+    public String getRoute_1() {
+        return route_1;
+    }
+
+    public void setRoute_1(String route) {
+        this.route_1 = route;
     }
 
     public String getDeparture() {

@@ -65,7 +65,7 @@ public class ItineraryService {
     }
 
 
-    public JSONArray curlItinerary(Map<Double, Double> departure, Map<Double, Double> arrival) throws IOException, InterruptedException,JSONException {
+    public JSONArray curlItinerary(Map<Double, Double> departure, Map<Double, Double> arrival,int i) throws IOException, InterruptedException,JSONException {
         Double longArrival=0d,latArrival=0d,longDeparture=0d,latDeparture=0d;
 
 
@@ -97,7 +97,7 @@ public class ItineraryService {
         JSONObject obj = new JSONObject(JSONString);
         try {
             JSONArray journeys = obj.getJSONArray("journeys");
-            JSONObject bestJourney = journeys.getJSONObject(0);
+            JSONObject bestJourney = journeys.getJSONObject(i);
             JSONArray sections = bestJourney.getJSONArray("sections");
             return sections;
         } catch (Exception e){
@@ -110,7 +110,7 @@ public class ItineraryService {
     public String transportToString(JSONObject transportRoute){
         String rtr = transportRoute.get("commercial_mode") + " " + transportRoute.get("code")
                 + " direction " + transportRoute.get("direction")
-                + " de " + transportRoute.get("from") + " à " + transportRoute.get("to");
+                + " de " + transportRoute.get("from") + " à " + transportRoute.get("to") + "\n\r" + "equipements : " +transportRoute.get("equipments");
         return rtr;
     }
 
@@ -130,7 +130,7 @@ public class ItineraryService {
 
 
 
-        public JSONArray parseSections(JSONArray sections){
+    public JSONArray parseSections(JSONArray sections){
         int i=0;
         JSONArray route = new JSONArray();
         while(i<sections.length()){
@@ -159,5 +159,3 @@ public class ItineraryService {
 
 
 }
-
-
