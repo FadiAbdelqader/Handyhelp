@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <title>Itinéraire</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+</head>
+<body>
+<div id="app">
+<h2>Calcul d'itinéraire.</h2>
+    <form action="#" th:action="@{/itinerary}" th:object="${initeraryModel}" method="post">
+        <p><i>Complétez le formulaire. Les champs marqués par </i><em>*</em> sont <em>obligatoires</em></p>
+        <fieldset>
+            <legend>Planifiez votre intinéraire avec Handyhelp !</legend>
+            <p><i>N'utilisez que des espaces dans vos adresses (pas de virgule)</i></p>
+            <label>Depart: <input type="text" th:field="*{departure}" /></label>
+            <label>Arrivee: <input type="text" th:field="*{arrival}" /></label>
+        </fieldset>
+
+        <fieldset>
+            <legend>Cochez la case vous correspondant<em>*</em></legend>
+            <label for="wheelchair"><input id="wheelchair" type="checkbox" name="binet" value="wc"> Je suis en fauteuil</label>
+            <label for="crutches"><input id="crutches" type="checkbox" name="binet" value="crtch"> Je suis en béquilles</label>
+        </fieldset>
+        <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
+
+    </form>
+</div>
+
+<script src="/resources/static/js/itinerary.js"></script>
+
+</body>
+</html>

@@ -9,7 +9,7 @@ plugins {
 
 group = 'com.miage'
 version = '0.0.1-SNAPSHOT'
-sourceCompatibility = '17'
+sourceCompatibility = '16'
 
 repositories {
 	mavenCentral()
@@ -19,10 +19,13 @@ repositories {
 
 
 dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-data-jdbc'
 	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+	runtimeOnly 'org.hsqldb:hsqldb'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	implementation 'org.json:json:20220924'
 }
 
 coverallsJacoco {

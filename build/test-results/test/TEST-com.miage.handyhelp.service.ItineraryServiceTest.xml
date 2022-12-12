@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.miage.handyhelp.service.ItineraryServiceTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2022-11-23T23:48:19" hostname="DESKTOP-JL40LA8" time="1.221">
+  <properties/>
+  <testcase name="transportToStringTest()" classname="com.miage.handyhelp.service.ItineraryServiceTest" time="0.049"/>
+  <testcase name="sansAccentTest()" classname="com.miage.handyhelp.service.ItineraryServiceTest" time="0.142"/>
+  <testcase name="getLongLatTest()" classname="com.miage.handyhelp.service.ItineraryServiceTest" time="1.027"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
