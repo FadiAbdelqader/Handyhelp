@@ -4,6 +4,7 @@ import com.miage.handyhelp.model.ItineraryModel;
 import com.miage.handyhelp.service.ItineraryService;
 import org.json.JSONArray;
 import org.json.JSONObject;
+import org.springframework.data.util.Pair;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -45,34 +46,29 @@ public class HandyhelpController {
             JSONObject journey = journeys.getJSONObject(i);
             JSONArray sections = journey.getJSONArray("sections");
             JSONArray directives = itineraryService.parseSections(sections);
+            Pair<String,Boolean> directivesToString = itineraryService.directivesToString(directives);
             switch (i){
                 case 0:
-                    ItineraryModel.setRoute_1(itineraryService.directivesToString(directives));
+                    ItineraryModel.setRoute_1(directivesToString.getFirst());
+                    ItineraryModel.setIs_1_accessible(directivesToString.getSecond());
+
+                    /*
+                    ItineraryModel.setRoute_1(itineraryService.directivesToString(directives).getFirst());
+                    ItineraryModel.setIs_1_accessible(itineraryService.directivesToString(directives).getSecond());
+
+                     */
                     break;
                 case 1:
-                    ItineraryModel.setRoute_2(itineraryService.directivesToString(directives));
+                    ItineraryModel.setRoute_2(directivesToString.getFirst());
+                    ItineraryModel.setIs_2_accessible(directivesToString.getSecond());
+                    /*ItineraryModel.setRoute_2(itineraryService.directivesToString(directives).getFirst());
+                    ItineraryModel.setIs_2_accessible(itineraryService.directivesToString(directives).getSecond());
+*/
                     i = journeys.length() +5;
                     break;
-        /*case 2:
-            ItineraryModel.setRoute_3(itineraryService.directivesToString(directives));
-            i = journeys.length() +5;
-            break;*/
             }
 
         }
-        /*
-        JSONArray sections_1 = itineraryService.curlItinerary(longitudeLatitude,longitudeLatitude2,0);
-        JSONArray directives_1 = itineraryService.parseSections(sections_1);
-        ItineraryModel.setRoute_1(itineraryService.directivesToString(directives_1));
-
-        JSONArray sections_2 = itineraryService.curlItinerary(longitudeLatitude,longitudeLatitude2,1);
-        JSONArray directives_2 = itineraryService.parseSections(sections_2);
-        ItineraryModel.setRoute_2(itineraryService.directivesToString(directives_2));
-
-        JSONArray sections_3 = itineraryService.curlItinerary(longitudeLatitude,longitudeLatitude2,2);
-        JSONArray directives_3 = itineraryService.parseSections(sections_3);
-        ItineraryModel.setRoute_3(itineraryService.directivesToString(directives_3));
-*/
         model.addAttribute("initeraryModel", ItineraryModel);
         return "pages/itineraryResult";
     }

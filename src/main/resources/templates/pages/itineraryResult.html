@@ -9,9 +9,11 @@
 <p th:text="'depart: ' + ${initeraryModel.departure}" />
 <p th:text="'arrivee: ' + ${initeraryModel.arrival}" />
 <p th:text="'chemin 1: ' + ${initeraryModel.route_1}" />
-<img th:src="@{images/ok.jpg}" width="100"></br>
+<img th:if="${itineraryModel.is_1_accessible}" th:src="@{'/images/ok.jpg'}" width="50" />
+<img th:unless="${itineraryModel.is_1_accessible}" th:src="@{/images/notok.jpeg}" width="50"/>
 <p th:text="'chemin 2: ' + ${initeraryModel.route_2}" />
-<p th:text="'chemin 3: ' + ${initeraryModel.route_3}" />
-<a href="/itinerary">Submit another message</a>
+<img th:if="${itineraryModel.is_2_accessible}" th:src="@{'/images/ok.jpg'}" width="50"/>
+<img th:unless="${itineraryModel.is_2_accessible}" th:src="@{/images/notok.jpeg}" width="50"/>
+<a href="/itinerary">Effectuez une autre recherche</a>
 </body>
 </html>
