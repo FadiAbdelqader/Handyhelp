@@ -97,9 +97,9 @@ public class ItineraryService {
         JSONObject obj = new JSONObject(JSONString);
         try {
             JSONArray journeys = obj.getJSONArray("journeys");
-            JSONObject bestJourney = journeys.getJSONObject(i);
-            JSONArray sections = bestJourney.getJSONArray("sections");
-            return sections;
+            //JSONObject bestJourney = journeys.getJSONObject(i);
+            //JSONArray sections = bestJourney.getJSONArray("sections");
+            return journeys;
         } catch (Exception e){
             System.out.println("journey could not be found");
         }
