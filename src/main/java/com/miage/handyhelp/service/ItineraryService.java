@@ -11,6 +11,7 @@ import java.util.*;
 import java.util.regex.Pattern;
 
 import org.json.*;
+import org.springframework.data.util.Pair;
 
 
 public class ItineraryService {
@@ -107,24 +108,29 @@ public class ItineraryService {
         return null;
     }
 
-    public String transportToString(JSONObject transportRoute){
+    public Pair<String,Boolean> transportToString(JSONObject transportRoute){
         String rtr = transportRoute.get("commercial_mode") + " " + transportRoute.get("code")
                 + " direction " + transportRoute.get("direction")
                 + " de " + transportRoute.get("from") + " à " + transportRoute.get("to") + "\n\r" + "equipements : " +transportRoute.get("equipments");
-        return rtr;
+        Boolean accessible = transportRoute.get("equipments").toString().contains("has_wheelchair_accessibility");
+        return Pair.of(rtr,accessible);
     }
 
-    public String directivesToString (JSONArray directives){
+    public Pair<String,Boolean> directivesToString (JSONArray directives){
         int i=0;
         String rtr = "";
+        Boolean has_accessible_route = true;
         while (i<directives.length()){
             JSONObject directive = directives.getJSONObject(i);
             if(directive.has("type") && ((String) directive.get("type")).compareTo("public_transport") == 0){
-                rtr+=" ||||| " + transportToString(directive);
+                rtr+=" ||||| " + transportToString(directive).getFirst();
+                if(!transportToString(directive).getSecond()){
+                    has_accessible_route = false;
+                }
             }
             i++;
         }
-        return rtr;
+        return Pair.of(rtr,has_accessible_route);
     }
 
 

@@ -5,7 +5,28 @@ public class ItineraryModel {
     private String arrival;
 
     private String route_1="";
+
+    private Boolean is_1_accessible;
     private String route_2="";
+
+    public Boolean getIs_1_accessible() {
+        return is_1_accessible;
+    }
+
+    public void setIs_1_accessible(Boolean is_1_accessible) {
+        this.is_1_accessible = is_1_accessible;
+    }
+
+    public Boolean getIs_2_accessible() {
+        return is_2_accessible;
+    }
+
+    public void setIs_2_accessible(Boolean is_2_accessible) {
+        this.is_2_accessible = is_2_accessible;
+    }
+
+    private Boolean is_2_accessible;
+
     private String route_3="";
 
     public String getRoute_2() {
