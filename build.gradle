@@ -3,8 +3,6 @@ plugins {
 	id 'org.springframework.boot' version '2.7.5'
 	id 'io.spring.dependency-management' version '1.0.15.RELEASE'
 	id 'jacoco'
-	id 'com.github.nbaztec.coveralls-jacoco' version '1.2.15'
-	id "com.github.kt3k.coveralls" version "2.5.0"
 }
 
 group = 'com.miage'
@@ -13,10 +11,7 @@ sourceCompatibility = '16'
 
 repositories {
 	mavenCentral()
-	jcenter()
 }
-
-
 
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-data-jdbc'
@@ -27,40 +22,6 @@ dependencies {
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	implementation 'org.json:json:20220924'
 }
-
-coverallsJacoco {
-    reportPath = "build/reports/jacoco/test/jacocoTestReport.xml" // default: "build/reports/jacoco/test/jacocoTestReport.xml"
-
-    reportSourceSets += sourceSets.foo.allJava.srcDirs + sourceSets.bar.allJava.srcDirs // default: main
-    apiEndpoint = "https://coveralls.io/api/v1/jobs" // default: https://coveralls.io/api/v1/jobs 
-    
-    dryRun = false // default: false
-    coverallsRequest = File("build/req.json") // default: null
-}
-
-gradlePlugin {
-  testSourceSets sourceSets.functionalTest
-  plugins {
-    coverallsPlugin {
-      id = 'com.github.kt3k.coveralls'
-      implementationClass = 'org.kt3k.gradle.plugin.CoverallsPlugin'
-    }
-  }
-}
-
-pluginBundle {
-  website = 'http://github.com/kt3k/coveralls-gradle-plugin/'
-  vcsUrl = 'https://github.com/kt3k/coveralls-gradle-plugin.git'
-  description = 'Send coverage data to coveralls.io'
-  tags = ['coverage', 'coveralls']
-
-  plugins {
-    coverallsPlugin {
-      displayName = 'Coveralls Gradle Plugin'
-    }
-  }
-}
-
 
 tasks.named('test') {
 	useJUnitPlatform()
