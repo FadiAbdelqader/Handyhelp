@@ -9,22 +9,7 @@
 ![GitHub tag (latest by date)](https://img.shields.io/github/v/tag/FadiAbdelqader/Handyhelp)
 #
 
-=======
-[![Tag](https://img.shields.io/github/tag/FadiAbdelqader/Handyhelp.svg?label=tag&style=flat-square)](build.gradle)
-[![Release](https://img.shields.io/github/release/FadiAbdelqader/Handyhelp.svg?style=flat-square)](build.gradle)
-#
 
-On ne s’en rend pas forcément compte, mais le monde tel qu’il est aujourd’hui n’est pas facilement accessible à tout le monde, et particulièrement pour les personnes en situation de handicap. 
-
-Handyhelp vise à venir en aide aux personnes à mobilité réduite, non pas en modifiant les infrastructures et les routes mais en les aidant à prévoir leurs trajets, en leur indiquant si tel ou tel endroit est accessible, et en leur fournissant les endroits facilement accessibles pour eux en fonction de ce qu'ils souhaitent faire. 
-
-À venir :
-  - Vous êtes PMR ? Reservez un taxi adapté directement depuis Handyhelp !
-  - Vous êtes taxi, spécialisé dans le transport de personnes à mobilité réduite, ou vous avez tout simplement la possibilité de conduire une personne à
-    mobilité réduite ? Inscrivez-vous sur Handyhelp et attendez que quelqu'un vous contacte !
-  - Vous souhaitez aller au musée, au cinéma... mais vous ne savez pas s'il est adapté à votre situation ? Vous aurez votre réponse sur Handyhelp !
-    Suite à votre visite, rendez-nous service ainsi qu'aux utilisateurs et attribuez une AccesNote au lieu visité.
->>>>>>> itinerary
 
 
 # Launch the app
