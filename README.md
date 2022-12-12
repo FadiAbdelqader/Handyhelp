@@ -5,7 +5,6 @@
  [![Codacy Badge](https://app.codacy.com/project/badge/Grade/2725e46651c245e3981ff73fd3c82770)](https://www.codacy.com/gh/FadiAbdelqader/Handyhelp/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=FadiAbdelqader/Handyhelp&amp;utm_campaign=Badge_Grade) 
 [![Coverage Status](https://coveralls.io/repos/github/FadiAbdelqader/Handyhelp/badge.svg?branch=main)](https://coveralls.io/github/FadiAbdelqader/Handyhelp?branch=main)
 [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
-<<<<<<< HEAD
 ![GitHub release (release name instead of tag name)](https://img.shields.io/github/v/release/FadiAbdelqader/Handyhelp?include_prereleases)
 ![GitHub tag (latest by date)](https://img.shields.io/github/v/tag/FadiAbdelqader/Handyhelp)
 #
