@@ -1,19 +1,32 @@
 <!DOCTYPE HTML>
 <html xmlns:th="https://www.thymeleaf.org">
-<head>
-    <title>Your itinerary</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-</head>
-<body>
-<h1>Result</h1>
-<p th:text="'depart: ' + ${initeraryModel.departure}" />
-<p th:text="'arrivee: ' + ${initeraryModel.arrival}" />
-<p th:text="'chemin 1: ' + ${initeraryModel.route_1}" />
-<img th:if="${itineraryModel.is_1_accessible}" th:src="@{'/images/ok.jpg'}" width="50" />
-<img th:unless="${itineraryModel.is_1_accessible}" th:src="@{/images/notok.jpeg}" width="50"/>
-<p th:text="'chemin 2: ' + ${initeraryModel.route_2}" />
-<img th:if="${itineraryModel.is_2_accessible}" th:src="@{'/images/ok.jpg'}" width="50"/>
-<img th:unless="${itineraryModel.is_2_accessible}" th:src="@{/images/notok.jpeg}" width="50"/>
-<a href="/itinerary">Effectuez une autre recherche</a>
-</body>
+    <head>
+        <title>Your itinerary</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <link th:href="@{/css/itineraryResult.css}" rel="stylesheet" />
+    </head>
+    <body>
+    <div th:replace="fragments/header"> </div>
+
+    <h1>Itinéraire</h1>
+        <table>
+                    <tr>
+                        <p th:text="'depart: ' + ${initeraryModel.departure}" />
+                        <p th:text="'arrivee: ' + ${initeraryModel.departure}" />
+                    </tr>
+
+                    <tr>
+                        <td><p th:text="'chemin 1: ' + ${initeraryModel.route_1}" /></td>
+                        <td><img th:if="${itineraryModel.is_1_accessible}" th:src="@{'/images/ok.jpg'}" width="50" /></td>
+                        <td><img th:unless="${itineraryModel.is_1_accessible}" th:src="@{/images/notok.jpeg}" width="50"/></td>
+                    </tr>
+
+                    <tr>
+                        <td><p th:text="'chemin 2: ' + ${initeraryModel.route_2}" /></td>
+                        <td><img th:if="${itineraryModel.is_2_accessible}" th:src="@{'/images/ok.jpg'}" width="50"/></td>
+                        <td><img th:unless="${itineraryModel.is_2_accessible}" th:src="@{/images/notok.jpeg}" width="50"/></td>
+                    </tr>
+        </table>
+    <a href="/itinerary">Effectuez une autre recherche</a>
+    </body>
 </html>

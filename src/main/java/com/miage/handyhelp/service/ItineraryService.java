@@ -123,7 +123,7 @@ public class ItineraryService {
         while (i<directives.length()){
             JSONObject directive = directives.getJSONObject(i);
             if(directive.has("type") && ((String) directive.get("type")).compareTo("public_transport") == 0){
-                rtr+=" ||||| " + transportToString(directive).getFirst();
+                rtr+=" --> \n\r " + transportToString(directive).getFirst();
                 if(!transportToString(directive).getSecond()){
                     has_accessible_route = false;
                 }
