@@ -3,6 +3,7 @@ plugins {
 	id 'org.springframework.boot' version '2.7.5'
 	id 'io.spring.dependency-management' version '1.0.15.RELEASE'
 	id 'jacoco'
+	id 'war'
 }
 
 group = 'com.miage'
@@ -21,6 +22,10 @@ dependencies {
 	runtimeOnly 'org.hsqldb:hsqldb'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	implementation 'org.json:json:20220924'
+}
+
+war{
+	enabled = true
 }
 
 tasks.named('test') {

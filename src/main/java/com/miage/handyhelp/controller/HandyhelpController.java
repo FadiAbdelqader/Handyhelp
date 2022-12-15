@@ -15,18 +15,11 @@ import java.util.Map;
 
 @Controller
 public class HandyhelpController {
-/*
-    @GetMapping(value = "/testapi")
-    @ResponseBody
-    public String testapi() throws IOException, InterruptedException {
-        ItineraryService i = new ItineraryService();
-        Map<Double, Double> longitudeLatitude = i.getLongLat("9 rue abel paris");
-        Map<Double, Double> longitudeLatitude2 = i.getLongLat("69 quai branly paris");
-        List<JSONArray j = i.curlItinerary(longitudeLatitude,longitudeLatitude2);
-        JSONArray arr = i.parseSections(j);
-        return j.toString();
-    }
-*/
+
+        @GetMapping("/")
+        public String showIndex(){
+            return "index";
+        }
 
     @GetMapping("/itinerary")
     public String greetingForm(Model model) {
@@ -51,19 +44,10 @@ public class HandyhelpController {
                 case 0:
                     ItineraryModel.setRoute_1(directivesToString.getFirst());
                     ItineraryModel.setIs_1_accessible(directivesToString.getSecond());
-
-                    /*
-                    ItineraryModel.setRoute_1(itineraryService.directivesToString(directives).getFirst());
-                    ItineraryModel.setIs_1_accessible(itineraryService.directivesToString(directives).getSecond());
-
-                     */
                     break;
                 case 1:
                     ItineraryModel.setRoute_2(directivesToString.getFirst());
                     ItineraryModel.setIs_2_accessible(directivesToString.getSecond());
-                    /*ItineraryModel.setRoute_2(itineraryService.directivesToString(directives).getFirst());
-                    ItineraryModel.setIs_2_accessible(itineraryService.directivesToString(directives).getSecond());
-*/
                     i = journeys.length() +5;
                     break;
             }
